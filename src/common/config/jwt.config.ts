@@ -1,0 +1,13 @@
+import 'dotenv/config';
+
+export const jwtConfig = {
+  access: {
+    secret: process.env.JWT_ACCESS_SECRET,
+    expiresIn:'15m',
+  },
+  refresh: {
+    secret: process.env.JWT_REFRESH_SECRET,
+    expiresIn: '7d',
+    expiresInDate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
+  },
+};
